@@ -33,7 +33,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     public Transaction findById(Integer userId, Integer categoryId, Integer transactionId) throws EtResourceNotFoundException {
 
         try{
-            System.out.println(userId+","+categoryId+","+transactionId+"check");
+
          return jdbcTemplate.queryForObject(SQL_FIND_BY_ID,new Object[]{userId,categoryId,transactionId},transactionRowMapper);
         }catch(Exception e){
             System.out.println(e);
